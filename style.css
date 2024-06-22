@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500,700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---Whtie: hsl(0, 0%, 98%);
+  ---Gray: hsl(0, 0%, 41%);
+  ---Black: hsl(0, 0%, 8%);
+}
+
+.bordered-button {
+  border: 0.3rem solid var(---Gray);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.bordered-button:hover {
+  background-color: black;
+  border-color: black;
+  color: white;
+  transition: 0.4s;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.6rem, 1.8rem, 2vw) !important;
+  font-family: "Epilogue", sans-serif !important;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li > a {
+  text-decoration: none;
+  color: var(---Gray);
+  text-transform: capitalize;
+}
+
+/* --------------------------------------------------------------------- */
+.nav-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-buttons > li {
+  cursor: pointer;
+}
+
+.nav-row {
+  padding-inline: 3rem;
+}
+.outer-container {
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  align-items: center;
+  min-height: 8rem;
+}
+
+.nav-buttons > li {
+  text-transform: capitalize;
+  color: var(---Gray);
+}
+
+/* --------------------------------------------------------- */
+/* making responsive navbar */
+@media screen and (max-width: 992px) {
+  .nav-row {
+    position: relative;
+  }
+
+  .nav-menus {
+    display: none !important;
+    position: absolute;
+    top: 120%;
+    height: calc(100vh - 8rem);
+    width: 100%;
+    right: 0%;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.47);
+    text-align: center;
+    backdrop-filter: blur(1rem);
+  }
+
+  .nav-menus > li {
+    padding-block: 2rem;
+  }
+
+  .nav-menus > li > a {
+    color: white;
+  }
+}
+/* .nav-menus > li > a {
+  color: white;
+} */
+
+.hamburger {
+  font-size: 4rem;
+}
+
+.navbar-toggle {
+  display: block !important;
+}
+
+.default-padding {
+  padding-bottom: 10rem;
+}
+
+.home-row {
+  position: relative;
+}
+
+.black-button {
+  background-color: black !important;
+  color: white;
+  border: none;
+}
+
+.main-heading {
+  font-weight: bold;
+  font-size: clamp(5rem, 8rem, 7vw);
+  line-height: 7rem;
+}
+.home-left > ul :not(:nth-child(1)) {
+  margin-top: 2rem;
+}
+
+.home-right > img {
+  max-width: 100%;
+}
+
+.brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .brands {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    max-width: max-content;
+    column-gap: 5rem;
+  }
+}
+
+.home-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
